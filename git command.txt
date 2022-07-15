@@ -1,0 +1,18 @@
+	connection
+git init
+git remote add origin url_репозитория
+git fetch origin
+git reset --mixed origin/master
+git add измененные файлы
+git commit -m "комментарий к коммиту"
+git push -u origin master
+
+
+
+
+git pull получение всех файлов из нашего репо
+git add добавл файл в кэш
+git commit -m 'сообщение' отправл подтверждение об изменениии какого-л файла
+git push отправка файла на сервер
+git status проверка версии
+git commit -am 'сообщение' = git add + git commit
