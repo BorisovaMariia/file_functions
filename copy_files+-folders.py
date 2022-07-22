@@ -5,7 +5,8 @@ import distutils.dir_util
 
 def copy_files_without_folders(path_copy, destination):
     """
-    path - file path (str)
+    path_copy - file path (str)
+    destination - path for copy (str)
 
     Function copy files to another directory without folders.
     """
@@ -25,13 +26,13 @@ root.withdraw() # Hides small tkinter window.
 root.attributes('-topmost', True) # Opened windows will be active. above all windows despite of selection.
 
 answer = messagebox.askquestion(title='Copy type', message='Do you want to copy files along with folders?')
-path_for_copy = filedialog.askdirectory(title='Choose old directory with files') # Returns opened path as str
+copy_path = filedialog.askdirectory(title='Choose old directory with files') # Returns opened path as str
 destination = filedialog.askdirectory(title='Choose new directory for files') # Returns opened path as str
 
 if answer == 'no':
-    copy_files_without_folders(path_for_copy, destination)
+    copy_files_without_folders(copy_path, destination)
 if answer == 'yes':
     try:
-        distutils.dir_util.copy_tree(path_for_copy, destination)
+        distutils.dir_util.copy_tree(copy_path, destination)
     except:
         pass
